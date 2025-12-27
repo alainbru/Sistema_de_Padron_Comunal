@@ -207,3 +207,20 @@ def actualizar_comunero(id_comunero):
     finally:
         cur.close()
         con.close()
+
+#¨****************ELIMINAR COMUNERO*********************#
+@comuneros_bp.route("/<int:id_comunero>", methods=["DELETE"])
+def eliminar_comunero(id_comunero):
+    try:
+        con = get_connection()
+        cur = con.cursor()
+        cur.execute("DELETE FROM COMUNEROS WHERE ID_COMUNEROS = ?", (id_comunero,))
+        if cur.rowcount == 0:
+            return jsonify({"error": "Comunero no encontrado"}), 404
+        con.commit()
+        return jsonify({"mensaje": "Comunero eliminado correctamente"}), 200
+    except fdb.DatabaseError as e:
+        return jsonify({"error": str(e)}), 500
+    finally:
+        cur.close()
+        con.close()
