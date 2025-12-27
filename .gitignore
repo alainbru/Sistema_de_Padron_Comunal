@@ -1,0 +1,5 @@
+# Ignorar carpeta de base de datos
+3_DATABASE/
+
+# Ignorar específicamente el archivo de base de datos Firebird
+3_DATABASE/COMUNIDAD.FDB
