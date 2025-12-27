@@ -3,3 +3,8 @@
 
 # Ignorar específicamente el archivo de base de datos Firebird
 3_DATABASE/COMUNIDAD.FDB
+
+#ignorar pychache
+# Python cache
+__pycache__/
+*.pyc
