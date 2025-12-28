@@ -4,7 +4,12 @@ from routes.actividades import actividades_bp
 from routes.asistencia import asistencia_bp
 from routes.directiva import directiva_bp
 
+from flask_cors import CORS
+
+
 app = Flask(__name__)
+
+CORS(app)
 
 app.register_blueprint(comuneros_bp, url_prefix="/api/comuneros")
 app.register_blueprint(actividades_bp, url_prefix="/api/actividades")
