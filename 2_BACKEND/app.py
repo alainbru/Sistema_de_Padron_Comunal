@@ -1,6 +1,7 @@
 from flask import Flask
 from routes.comuneros import comuneros_bp
 from routes.actividades import actividades_bp
+from routes.asistencia import asistencia_bp
 
 app = Flask(__name__)
 
