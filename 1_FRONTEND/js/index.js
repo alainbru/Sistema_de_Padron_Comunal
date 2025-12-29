@@ -23,6 +23,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Botón para ir a la lista de comuneros
 document.getElementById("btn-ver-comuneros").addEventListener("click", () => {
     window.location.href = "comuneros.html";
