@@ -1,4 +1,4 @@
-import { get, post, put, remove } from "./api.js";
+import { get, post, put, remove } from "./api/api.js";
 
 export async function listarComuneros() {
     try {

@@ -1,11 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Padrón General</title>
+    <link rel="stylesheet" href="css/styles_index.css">
 </head>
 <body>
-    
+
+    <!-- 🔝 HEADER -->
+    <header class="header">
+        <div class="header-left">
+            <h1>Padrón General 2024 - 2025</h1>
+            <p>Comunidad Unión Benditani</p>
+            <p>Ituata - Carabaya - Puno</p>
+            <span>Sistema de Gestión Comunitaria</span>
+        </div>
+
+        <div class="header-right">
+            <p class="usuario">Usuario: <strong>Alain</strong></p>
+            <button id="logout">Salir</button>
+        </div>
+    </header>
+
+  <!-- CONTENEDOR GENERAL -->
+    <div class="layout">
+
+        <!-- 📚 SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li>🏠 Dashboard</li>
+                <li>👥 Comuneros</li>
+                <li>🧑‍⚖️ Directiva</li>
+                <li>📅 Actividades</li>
+                <li>✅ Asistencia</li>
+            </ul>
+        </aside>
+
+        <!-- CONTENIDO -->
+        <main class="content">
+            <h2>Dashboard</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Total de Comuneros</h3>
+                    <p id="total-comuneros">0</p>
+                </div>
+            </div>
+        </main>
+
+
+    </div>
+<script type="module" src="./js/index.js"></script>
 </body>
 </html>
+
+
+
