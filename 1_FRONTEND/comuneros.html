@@ -3,26 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de Comuneros</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="css/styles_comu.css">
 </head>
 <body>
-    <h1>Comuneros</h1>
+    <!-- Barra superior -->
+    <header>
+        <h1>Padrón General 2024 - 2025</h1>
+        <p>Usuario: Alain</p>
+        <button id="logout1">Salir</button>
+    </header>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>DNI</th>
-                <th>Directorio</th>
-                <th>Fecha Nacimiento</th>
-                <th>Estado</th>
-            </tr>
-        </thead>
-        <tbody id="tablaComuneros"></tbody>
-    </table>
+    <!-- Contenedor general -->
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="index.html">🏠 Dashboard</a></li>
+                <li>👥 Comuneros</li>
+                <li><a href="directiva.html">🧑‍⚖️ Directiva</a></li>
+                <li><a href="actividades.html">📅 Actividades</a></li>
+                <li><a href="asistencia.html">✅ Asistencia</a></li>
+            </ul>
+        </aside>
 
-    <script type="module" src="js/comuneros.js"></script>
+        <!-- Contenido -->
+        <main class="content">
+            <h2>Lista de Comuneros</h2>
+            <table id="tabla-comuneros">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>DNI</th>
+                        <th>Directorio</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>Nº Hijos</th>
+                        <th>Fecha Registro</th>
+                        <th>Estado</th>
+                        <th>Terreno</th>
+                        <th>Estado Civil</th>
+                        <th>Ganados</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <script type="module" src="./js/comuneros.js"></script>
+
 </body>
 </html>

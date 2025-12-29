@@ -45,6 +45,10 @@
                 <div class="card">
                     <h3>Total de Comuneros</h3>
                     <p id="total-comuneros">0</p>
+                    
+                    <button id="btn-ver-comuneros">Ver Todos los Comuneros</button>
+                    <button id="btn-agregar-comunero">Agregar Comunero</button>
+
                 </div>
             </div>
         </main>
@@ -52,6 +56,22 @@
 
     </div>
 <script type="module" src="./js/index.js"></script>
+
+<!-- Modal -->
+<div id="modal-agregar-comunero" style="display:none;">
+    <div class="modal-content">
+        <h3>Agregar Comunero</h3>
+        <label>Nombres:</label>
+        <input type="text" id="nombres" />
+        <label>Apellidos:</label>
+        <input type="text" id="apellidos" />
+        <label>DNI:</label>
+        <input type="text" id="dni" />
+        <button id="btn-guardar-comunero">Guardar</button>
+        <button id="btn-cerrar-modal">Cerrar</button>
+    </div>
+</div>
+
 </body>
 </html>
 

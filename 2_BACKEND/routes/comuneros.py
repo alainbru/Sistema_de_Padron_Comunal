@@ -224,3 +224,18 @@ def eliminar_comunero(id_comunero):
     finally:
         cur.close()
         con.close()
+
+
+@comuneros_bp.route("/total", methods=["GET"])
+def total_comuneros():
+    try:
+        con = get_connection()
+        cur = con.cursor()
+        cur.execute("SELECT COUNT(*) FROM COMUNEROS")
+        total = cur.fetchone()[0]
+        return jsonify({"total": total})
+    except fdb.DatabaseError as e:
+        return jsonify({"error": str(e)}), 500
+    finally:
+        cur.close()
+        con.close()
