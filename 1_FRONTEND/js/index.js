@@ -11,15 +11,17 @@ document.getElementById("logout").addEventListener("click", () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", async () => {
+async function refreshTotal() {
     try {
         const data = await get("total");
-        console.log("RESPUESTA API:", data);
-
         document.getElementById("total-comuneros").textContent = data.total;
     } catch (error) {
         console.error("Error cargando total:", error);
     }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await refreshTotal();
 });
 
 
@@ -41,10 +43,24 @@ document.getElementById("btn-cerrar-modal").addEventListener("click", () => {
 // Guardar comunero
 document.getElementById("btn-guardar-comunero").addEventListener("click", async () => {
     const data = {
-        nombres: document.getElementById("nombres").value,
-        apellidos: document.getElementById("apellidos").value,
-        dni: document.getElementById("dni").value
+        nombres: document.getElementById("nombres").value.trim(),
+        apellidos: document.getElementById("apellidos").value.trim(),
+        dni: document.getElementById("dni").value.trim(),
+        directorio: document.getElementById("directorio").value.trim(),
+        fecha_nacimiento: document.getElementById("fecha_nacimiento").value || null,
+        n_hijos: document.getElementById("n_hijos").value ? Number(document.getElementById("n_hijos").value) : null,
+        estado: document.getElementById("estado").value || "ACTIVO",
+        extension_terreno: document.getElementById("extension_terreno").value ? Number(document.getElementById("extension_terreno").value) : null,
+        estado_civil: document.getElementById("estado_civil").value || "",
+        cantidad_ganados: document.getElementById("cantidad_ganados").value ? Number(document.getElementById("cantidad_ganados").value) : null,
+        observaciones: document.getElementById("observaciones").value.trim()
     };
+
+    // Validación mínima
+    if (!data.nombres || !data.apellidos || !data.dni) {
+        alert('Complete los campos obligatorios: nombres, apellidos, dni.');
+        return;
+    }
 
     try {
         const result = await post("", data); // endpoint vacío = "/api/comuneros/"
@@ -52,7 +68,9 @@ document.getElementById("btn-guardar-comunero").addEventListener("click", async 
         if (result.mensaje) {
             alert(result.mensaje);
             document.getElementById("modal-agregar-comunero").style.display = "none";
-            // Aquí puedes refrescar el total de comuneros usando tu función get
+            const form = document.getElementById("modal-agregar-comunero-form");
+            if (form) form.reset();
+            await refreshTotal();
         } else if (result.error) {
             alert(result.error);
         }

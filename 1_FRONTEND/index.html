@@ -65,14 +65,53 @@
 <div id="modal-agregar-comunero" style="display:none;">
     <div class="modal-content">
         <h3>Agregar Comunero</h3>
-        <label>Nombres:</label>
-        <input type="text" id="nombres" />
-        <label>Apellidos:</label>
-        <input type="text" id="apellidos" />
-        <label>DNI:</label>
-        <input type="text" id="dni" />
-        <button id="btn-guardar-comunero">Guardar</button>
-        <button id="btn-cerrar-modal">Cerrar</button>
+        <form id="modal-agregar-comunero-form">
+            <label>Nombres:</label>
+            <input type="text" id="nombres" name="nombres" required />
+
+            <label>Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required />
+
+            <label>DNI:</label>
+            <input type="text" id="dni" name="dni" required />
+
+            <label>Directorio:</label>
+            <input type="text" id="directorio" name="directorio" />
+
+            <label>Fecha de nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" />
+
+            <label>Nº Hijos:</label>
+            <input type="number" id="n_hijos" name="n_hijos" min="0" />
+
+            <label>Estado:</label>
+            <select id="estado" name="estado">
+                <option value="ACTIVO">ACTIVO</option>
+                <option value="RETIRADO">RETIRADO</option>
+                <option value="FALLECIDO">FALLECIDO</option>
+            </select>
+
+            <label>Extensión de terreno (m2):</label>
+            <input type="number" id="extension_terreno" name="extension_terreno" step="0.01" />
+
+            <label>Estado civil:</label>
+            <select id="estado_civil" name="estado_civil">
+                <option value="">-- Seleccione --</option>
+                <option value="SOLTERO">SOLTERO</option>
+                <option value="CASADO">CASADO</option>
+            </select>
+
+            <label>Cantidad de ganados:</label>
+            <input type="number" id="cantidad_ganados" name="cantidad_ganados" min="0" />
+
+            <label>Observaciones:</label>
+            <textarea id="observaciones" name="observaciones" rows="3"></textarea>
+
+            <div style="margin-top:8px;">
+                <button type="button" id="btn-guardar-comunero">Guardar</button>
+                <button type="button" id="btn-cerrar-modal">Cerrar</button>
+            </div>
+        </form>
     </div>
 </div>
 
