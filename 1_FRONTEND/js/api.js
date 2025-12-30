@@ -28,3 +28,11 @@ export async function remove(endpoint) {
     const res = await fetch(`${API_BASE}/${endpoint}`, { method: "DELETE" });
     return await res.json();
 }
+
+export async function buscar(q) {
+    console.log("BUSCANDO:", q);
+    const res = await fetch(`${API_BASE}/buscar?q=${encodeURIComponent(q)}`);
+    const data = await res.json();
+    console.log("RESULTADO:", data);
+    return data;
+}

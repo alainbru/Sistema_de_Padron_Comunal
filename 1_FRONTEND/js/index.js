@@ -26,16 +26,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
 // Botón para ir a la lista de comuneros
 document.getElementById("btn-ver-comuneros").addEventListener("click", () => {
     window.location.href = "comuneros.html";
@@ -71,3 +61,6 @@ document.getElementById("btn-guardar-comunero").addEventListener("click", async 
         alert("Error al conectar con el servidor");
     }
 });
+
+
+
