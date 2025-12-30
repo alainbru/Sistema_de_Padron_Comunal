@@ -1,4 +1,4 @@
-import { get, buscar } from "./api.js";
+import { get, buscar, remove } from "./api.js";
 
 
 
@@ -38,7 +38,7 @@ function renderTabla(comuneros) {
     tbody.innerHTML = "";
 
     if (!Array.isArray(comuneros) || comuneros.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="13">No hay resultados.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="14">No hay resultados.</td></tr>`;
         return;
     }
 
@@ -58,8 +58,26 @@ function renderTabla(comuneros) {
             <td>${c.estado_civil || "-"}</td>
             <td>${c.cantidad_ganados ?? 0}</td>
             <td>${c.observaciones || "-"}</td>
+            <td><button class="btn-eliminar" data-id="${c.id_comunero}">Eliminar</button></td>
         `;
         tbody.appendChild(fila);
+
+        const btnEliminar = fila.querySelector(".btn-eliminar");
+        if (btnEliminar) {
+            btnEliminar.addEventListener("click", async () => {
+                if (!confirm(`¿Eliminar a ${c.nombres} ${c.apellidos}?`)) return;
+                try {
+                    const res = await remove(`${c.id_comunero}`);
+                    if (res.error) { alert(res.error); return; }
+                    alert(res.mensaje || "Comunero eliminado correctamente");
+                    fila.remove();
+                } catch (err) {
+                    console.error(err);
+                    alert("Error al eliminar comunero");
+                }
+            });
+        }
+
     });
 }
 
