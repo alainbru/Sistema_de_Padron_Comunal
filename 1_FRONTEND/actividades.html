@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividades</title>
+    <link rel="stylesheet" href="css/styles_comu.css">
+</head>
+<body>
+    <header>
+        <h1>Padrón General 2024 - 2025</h1>
+        <p>Usuario: Alain</p>
+        <button id="logout1">Salir</button>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="index.html">🏠 Dashboard</a></li>
+                <li><a href="comuneros.html">👥 Comuneros</a></li>
+                <li><a href="directiva.html">🧑‍⚖️ Directiva</a></li>
+                <li>📅 Actividades</li>
+                <li><a href="asistencia.html">✅ Asistencia</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h2>Agregar Actividad</h2>
+
+            <form id="form-actividad">
+                <div>
+                    <label for="nombre_actividad">Nombre de actividad</label><br>
+                    <input id="nombre_actividad" name="nombre_actividad" type="text" required>
+                </div>
+
+                <div>
+                    <label for="fecha">Fecha</label><br>
+                    <input id="fecha" name="fecha" type="date" required>
+                </div>
+
+                <div>
+                    <label for="lugar">Lugar</label><br>
+                    <input id="lugar" name="lugar" type="text" required>
+                </div>
+
+                <div>
+                    <label for="descripcion">Descripción</label><br>
+                    <textarea id="descripcion" name="descripcion" rows="3"></textarea>
+                </div>
+
+                <div>
+                    <button type="submit" id="btn-agregar">Agregar Actividad</button>
+                </div>
+            </form>
+
+            <hr>
+
+            <h2>Listado de Actividades</h2>
+            <table id="tabla-actividades">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Fecha</th>
+                        <th>Lugar</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </main>
+    </div>
+
+    <script type="module" src="./js/actividades.js"></script>
+</body>
+</html>
