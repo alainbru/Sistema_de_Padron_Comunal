@@ -120,7 +120,7 @@ def buscar_comunero():
             FROM COMUNEROS
             WHERE UPPER(NOMBRES) LIKE ?          -- σ: filtrar por nombre
                OR UPPER(APELLIDOS) LIKE ?       -- σ: filtrar por apellido
-               OR DNI LIKE ?                    -- σ: filtrar por DNI parcial
+               OR CAST(DNI AS VARCHAR(50)) LIKE ?  -- σ: filtrar por DNI parcial (forzar a texto)
         """
 
         # Usar LIKE también para DNI (coincidencias parciales) y mantener el tratamiento de mayúsculas
