@@ -1,24 +1,192 @@
-table {
+:root {
+    --primary: #1976d2;
+    --secondary: #26a69a;
+    --background: #f5f7fa;
+    --sidebar: #1e293b;
+    --card: #ffffff;
+    --text: #263238;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+.layout {
+    display: flex;
+    min-height: calc(100vh - 80px);
+}
+header {
+    background: var(--primary);
+    color: white;
+    padding: 16px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+header p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+header button {
+    background: white;
+    color: var(--primary);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.sidebar {
+    width: 240px;
+    background: var(--sidebar);
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 15px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar li {
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    display: block;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.15);
+}
+.buscador {
+    background: white;
+    margin: 20px;
+    padding: 16px;
+    border-radius: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.buscador input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+}
+
+.buscador button {
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#btn-buscar {
+    background: var(--primary);
+    color: white;
+}
+
+#btn-limpiar {
+    background: #64748b;
+    color: white;
+}
+.content {
+    flex: 1;
+    padding: 20px 30px 30px;
+}
+
+.content h2 {
+    margin-top: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+#tabla-comuneros {
     width: 100%;
     border-collapse: collapse;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.08);
 }
 
-table th, table td {
-    border: 1px solid #ccc;
-    padding: 6px;
+#tabla-comuneros thead {
+    background: var(--primary);
+    color: white;
+}
+
+#tabla-comuneros th,
+#tabla-comuneros td {
+    padding: 12px 10px;
+    font-size: 13px;
     text-align: left;
+    border-bottom: 1px solid #e5e7eb;
 }
 
-table th {
-    background-color: #f2f2f2;
+#tabla-comuneros tbody tr:hover {
+    background: #f1f5f9;
 }
 
-/* Botón eliminar */
-.btn-eliminar {
-    background: #e74c3c;
-    color: #fff;
+#tabla-comuneros th {
+    font-weight: 500;
+}
+#tabla-comuneros button {
     border: none;
-    padding: 4px 8px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
     cursor: pointer;
-    border-radius: 4px;
+    margin-right: 4px;
+}
+
+.btn-editar {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-eliminar {
+    background: #e53935;
+    color: white;
+}
+@media (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
+
+    .buscador {
+        margin: 10px;
+        flex-direction: column;
+        align-items: stretch;
+    }
 }

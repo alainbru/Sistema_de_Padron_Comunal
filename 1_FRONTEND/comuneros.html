@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de Comuneros</title>
-    <link rel="stylesheet" href="css/styles_comu.css">
+    <link rel="stylesheet" href="css/styles_comu.css?v=2">
 </head>
 <body>
     <!-- Barra superior -->
@@ -12,6 +12,16 @@
         <p>Usuario: Alain</p>
         <button id="logout1">Salir</button>
     </header>
+<!-- Buscador -->
+        <div class="buscador">
+            <input 
+                type="text" 
+                id="buscar-comunero" 
+                placeholder="Buscar por nombre, apellido o DNI"
+            >
+            <button id="btn-buscar">🔍 Buscar</button>
+            <button id="btn-limpiar">🧹 Limpiar</button>
+        </div>
 
     <!-- Contenedor general -->
     <div class="layout">
@@ -27,17 +37,7 @@
             </ul>
         </aside>
         
-        <!-- Buscador -->
-        <div class="buscador">
-            <input 
-                type="text" 
-                id="buscar-comunero" 
-                placeholder="Buscar por nombre, apellido o DNI"
-            >
-            <button id="btn-buscar">🔍 Buscar</button>
-            <button id="btn-limpiar">🧹 Limpiar</button>
-        </div>
-
+        
 
         <!-- Contenido -->
         <main class="content">

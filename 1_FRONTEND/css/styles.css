@@ -1,0 +1,230 @@
+:root {
+    --primary: #1976d2;
+    --secondary: #26a69a;
+    --background: #f5f7fa;
+    --sidebar: #1e293b;
+    --card: #ffffff;
+    --text: #263238;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+.layout {
+    display: flex;
+    min-height: calc(100vh - 90px);
+}
+.header {
+    background: var(--primary);
+    color: white;
+    padding: 18px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.header-left p {
+    margin: 2px 0;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.header-left span {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-right button {
+    border: none;
+    background: white;
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.sidebar {
+    width: 240px;
+    background: var(--sidebar);
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar li {
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    display: block;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 26px;
+    width: 300px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 16px;
+    color: #475569;
+}
+
+.card p {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 10px 0 20px;
+    color: var(--primary);
+}
+
+.card button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#btn-ver-comuneros {
+    background: var(--primary);
+    color: white;
+}
+
+#btn-agregar-comunero {
+    background: var(--secondary);
+    color: white;
+}
+
+#modal-agregar-comunero {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: var(--primary);
+}
+
+#modal-agregar-comunero-form label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 10px;
+    display: block;
+    color: #475569;
+}
+
+#modal-agregar-comunero-form input,
+#modal-agregar-comunero-form select,
+#modal-agregar-comunero-form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 4px;
+    border: none;
+    border-bottom: 2px solid #cbd5e1;
+    outline: none;
+    font-size: 14px;
+    background: transparent;
+}
+
+#modal-agregar-comunero-form input:focus,
+#modal-agregar-comunero-form select:focus,
+#modal-agregar-comunero-form textarea:focus {
+    border-bottom-color: var(--primary);
+}
+
+#btn-guardar-comunero {
+    background: var(--secondary);
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#btn-cerrar-modal {
+    background: #64748b;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}

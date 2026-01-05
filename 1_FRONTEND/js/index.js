@@ -34,7 +34,8 @@ document.getElementById("btn-ver-comuneros").addEventListener("click", () => {
 });
 // Abrir modal
 document.getElementById("btn-agregar-comunero").addEventListener("click", () => {
-    document.getElementById("modal-agregar-comunero").style.display = "block";
+    // Usamos 'flex' para que el contenedor modal centre su contenido vertical y horizontalmente
+    document.getElementById("modal-agregar-comunero").style.display = "flex";
 });
 // Cerrar modal
 document.getElementById("btn-cerrar-modal").addEventListener("click", () => {
